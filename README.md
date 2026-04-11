@@ -21,18 +21,3 @@ This portfolio is designed to be easily modified without deep programming knowle
 ## Deployment 🌐
 
 Since this is a static site, you can host it for free indefinitely. 
-
-### Option 1: GitHub Pages (Recommended)
-1. Commit all files and push this folder to a new public GitHub repository.
-2. Go to your repository **Settings** > **Pages**.
-3. Under "Build and deployment", set the source to **Deploy from a branch**.
-4. Select the `main` (or `master`) branch and save.
-5. Your site will be live at `https://yourusername.github.io/your-repo-name`.
-
-### Option 2: Vercel or Netlify
-1. Drag and drop this entire folder into the [Netlify Drop](https://app.netlify.com/drop) interface or import the GitHub repository in [Vercel](https://vercel.com/new).
-2. It will automatically deploy and provide a live production URL instantly.
-
----
-
-*Designed and engineered for a modern web experience.*
