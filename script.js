@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (dist < MOUSE_REPEL_RADIUS) {
                 const force = Math.pow((MOUSE_REPEL_RADIUS - dist) / MOUSE_REPEL_RADIUS, 2);
-                item.vx += (dx / dist) * force * 8;
-                item.vy += (dy / dist) * force * 8;
+                item.vx += (dx / dist) * force * 4; // Reduced from 8
+                item.vy += (dy / dist) * force * 4;
             }
 
             const targetY = bobY;
@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             item.vy += (targetY - item.y) * SPRING_STRENGTH;
             item.vx += (0 - item.x) * SPRING_STRENGTH;
 
-            item.x += item.vx;
-            item.y += item.vy;
+            // Containment
+            const maxDisp = 50;
+            item.x = Math.max(-maxDisp, Math.min(maxDisp, item.x + item.vx));
+            item.y = Math.max(-maxDisp, Math.min(maxDisp, item.y + item.vy));
 
             item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
         });
@@ -152,16 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
     /* =========================================================
        4. SCROLL REVEAL & NAVIGATION
     ========================================================= */
-    function initScrollEffects() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    function initScrollEffects() {
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // Active Link Highlighting
         window.addEventListener('scroll', () => {
@@ -169,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
+                if (window.pageYOffset >= sectionTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
@@ -207,11 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="tag">${repo.language || 'Code'}</span>
                         </div>
                         <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">${repo.description || 'No description provided.'}</p>
-                        <a href="${repo.html_url}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Explore &rarr;</a>
+                        <a href="${repo.html_url}" target="_blank" class="project-link" style="color: var(--primary); text-decoration: none; font-weight: 600;">Explore &rarr;</a>
                     </div>
                 `;
+                card.style.cursor = 'pointer';
+                card.onclick = () => window.open(repo.html_url, '_blank');
                 container.appendChild(card);
-                observer.observe(card); // Observe new card
+                revealObserver.observe(card); // Observe new card
             });
             initAntigravity();
         } catch (error) {
