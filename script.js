@@ -196,12 +196,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const repos = await response.json();
             container.innerHTML = '';
             
-            repos.forEach(repo => {
+            const imageIds = [
+                '1517694712202-14dd9538aa97',
+                '1550751827-4bd374c3f58b',
+                '1555066931-4365d14bab8c',
+                '1587620962725-abab7fe55159',
+                '1498050108023-c5249f4df085',
+                '1518770660439-4636190af475'
+            ];
+
+            repos.forEach((repo, index) => {
                 const card = document.createElement('div');
                 card.className = 'project-card reveal';
+                const imgId = imageIds[index % imageIds.length];
                 card.innerHTML = `
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600" alt="${repo.name}">
+                        <img src="https://images.unsplash.com/photo-${imgId}?auto=format&fit=crop&q=80&w=600" alt="${repo.name}">
                     </div>
                     <div class="project-info">
                         <h3>${repo.name}</h3>
