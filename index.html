@@ -3,138 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- EDIT: Change your page title here -->
-    <title>Santhosh | Cybersecurity Portfolio</title>
-    <!-- EDIT: Change your description here -->
-    <meta name="description" content="Cybersecurity Analyst and Software Engineer Portfolio">
+    <title>Santhosh | Full Stack Engineer</title>
+    <meta name="description" content="Portfolio of Santhosh - Software Engineer and Full Stack Developer">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Next-Level Overlay Layers -->
-    <div class="noise-overlay"></div>
-    <div class="cursor-spotlight" id="cursor-spotlight"></div>
-
-    <!-- Abstract Background -->
-    <div class="mesh-bg parallax-layer" data-speed="0.05"></div>
+    <!-- Background Layers -->
+    <div class="mesh-bg"></div>
     <div class="particles-container" id="particles"></div>
     <div class="scanline"></div>
-    <div class="glow glow-1 parallax-layer" data-speed="0.1"></div>
-    <div class="glow glow-2 parallax-layer" data-speed="0.15"></div>
+    <div class="cursor-spotlight" id="cursor-spotlight"></div>
 
-    <!-- Floating Dock Navigation -->
-    <nav class="floating-dock">
-        <ul class="dock-links">
-            <li><a href="#hero" class="dock-item magnetic antigravity" title="Home">H</a></li>
-            <li><a href="#about" class="dock-item magnetic antigravity" title="About">A</a></li>
-            <li><a href="#projects" class="dock-item magnetic antigravity" title="Projects">P</a></li>
-            <li><a href="#skills" class="dock-item magnetic antigravity" title="Skills">S</a></li>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SANTHOSH<span class="text-blue">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#qualification">Qualification</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- EDIT: Change CTA or Email link -->
-        <a href="#contact" class="dock-cta magnetic antigravity">Hire Me</a>
+        <a href="#contact" class="btn btn-outline">Hire Me</a>
     </nav>
 
-    <!-- Main Content Wrapper -->
-    <main class="wrapper">
-        <!-- Hero Section -->
-        <section class="hero reveal" id="hero">
-            <div class="hero-content">
-                <p class="overline antigravity">WELCOME TO MY HUD</p>
-                <!-- EDIT: Change your name here -->
-                <h1 class="mega-title antigravity" id="main-hero-title">I'm <span class="text-gradient">Santhosh</span></h1>
-                <div class="typing-text" id="typing-element"></div>
-                <!-- EDIT: Change your hero description here -->
-                <p class="hero-desc antigravity">Cybersecurity enthusiast focused on Blue Teaming and Web Security.</p>
-                <div class="btn-group">
-                    <a href="#projects" class="btn-solid magnetic">View Reports</a>
-                    <a href="#contact" class="btn-outline magnetic">Contact Me</a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="radar-canvas"></canvas>
+        <div class="hero-content">
+            <span class="hero-subtitle reveal">SOFTWARE ENGINEER</span>
+            <h1 class="hero-title reveal">Hi, I'm <span class="text-blue">Santhosh</span></h1>
+            <div class="typing-container reveal">
+                I am a <span id="typing-text"></span>
             </div>
-            <div class="hero-visual">
-                <div class="radar-container antigravity" id="radar-box">
-                    <canvas id="radar-canvas"></canvas>
+            <div class="btn-group reveal">
+                <a href="#projects" class="btn btn-primary antigravity">View My Work</a>
+                <a href="#contact" class="btn btn-outline antigravity">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title reveal">About <span>Me</span></h2>
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <p>I am a software engineer with a passion for building beautiful, responsive, and user-centric web applications. Currently focused on modern frontend technologies like React, Vue, and cutting-edge CSS.</p>
+                    <p style="margin-top: 1.5rem;">I believe in engineering digital solutions that are not only functional but also provide a stunning user experience. My approach combines technical rigor with a keen eye for design.</p>
+                    <div class="about-details">
+                        <div class="detail-item antigravity">
+                            <span>LOCATION</span>
+                            <strong>Chennai, India</strong>
+                        </div>
+                        <div class="detail-item antigravity">
+                            <span>STATUS</span>
+                            <strong class="text-blue">Available for Work</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual antigravity">
+                    <div class="pill-card hud-border">
+                        <h3 class="text-blue">Biography</h3>
+                        <p style="margin-top: 1rem; color: var(--text-secondary);">Passionate about full-stack development, open-source contribution, and exploring new horizons in software engineering.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="reveal">
-            <div class="split-section">
-                <div class="section-title-wrap">
-                    <h2 class="vertical-title">BIOGRAPHY</h2>
+        <!-- Qualification Section (Complete Options) -->
+        <section id="qualification" class="section">
+            <h2 class="section-title reveal">My <span>Qualification</span></h2>
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content antigravity">
+                        <span class="date">2021 - Present</span>
+                        <h3>Software Engineering</h3>
+                        <p>Pursuing excellence in software architecture and modern web technologies.</p>
+                    </div>
                 </div>
-                <div class="section-body">
-                    <h2 class="section-title">About <span>Me</span></h2>
-                    <div class="pill-card antigravity hud-border">
-                        <!-- EDIT: Change your bio here -->
-                        <p class="large-text">I am a software engineer with a passion for building beautiful, responsive, and user-centric web applications. Currently focused on modern frontend technologies like React, Vue, and cutting-edge CSS.</p>
-                        <div class="info-row" style="margin-top: 2rem; display: flex; gap: 2rem;">
-                            <div>
-                                <span class="label">LOCATION</span>
-                                <!-- EDIT: Change your location here -->
-                                <strong>Chennai, India</strong>
-                            </div>
-                            <div>
-                                <span class="label">STATUS</span>
-                                <!-- EDIT: Change your status here -->
-                                <strong style="color: var(--accent-1);">Available for work</strong>
-                            </div>
-                        </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content antigravity">
+                        <span class="date">2019 - 2021</span>
+                        <h3>Higher Secondary Education</h3>
+                        <p>Focused on Mathematics and Computer Science.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title reveal">My <span>Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill antigravity">HTML</span>
+                        <span class="skill-pill antigravity">CSS</span>
+                        <span class="skill-pill antigravity">JavaScript</span>
+                        <span class="skill-pill antigravity">React</span>
+                        <span class="skill-pill antigravity">Vue</span>
+                        <span class="skill-pill antigravity">Tailwind</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill antigravity">Node.js</span>
+                        <span class="skill-pill antigravity">Python</span>
+                        <span class="skill-pill antigravity">PostgreSQL</span>
+                        <span class="skill-pill antigravity">Express</span>
+                        <span class="skill-pill antigravity">MongoDB</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="reveal">
-            <h2 class="section-title">My <span>Projects</span></h2>
-            <div class="masonry-grid" id="projects-container">
-                <p style="color: var(--text-dim); text-align: center; width: 100%; font-size: 1.2rem;">Fetching latest repositories from GitHub...</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="reveal">
-            <h2 class="section-title">My <span>Expertise</span></h2>
-            <div class="skills-flex" id="skills-container">
-                
-                <!-- EDIT: Skill Category 1 -->
-                <div class="skill-row">
-                    <div class="skill-cat">Frontend</div>
-                    <div class="skill-items">
-                        <span class="skill-pill antigravity">HTML</span><span style="color: var(--surface-border)">/</span>
-                        <span class="skill-pill antigravity">CSS</span><span style="color: var(--surface-border)">/</span>
-                        <span class="skill-pill antigravity">JavaScript</span><span style="color: var(--surface-border)">/</span>
-                        <span class="skill-pill antigravity">React</span>
-                    </div>
-                </div>
-
-                <!-- EDIT: Skill Category 2 -->
-                <div class="skill-row">
-                    <div class="skill-cat">Backend</div>
-                    <div class="skill-items">
-                        <span class="skill-pill antigravity">Node.js</span><span style="color: var(--surface-border)">/</span>
-                        <span class="skill-pill antigravity">Python</span><span style="color: var(--surface-border)">/</span>
-                        <span class="skill-pill antigravity">PostgreSQL</span>
-                    </div>
-                </div>
-
+        <section id="projects" class="section">
+            <h2 class="section-title reveal">My <span>Projects</span></h2>
+            <div class="projects-grid" id="projects-container">
+                <p style="text-align: center; width: 100%; color: var(--text-secondary);">Loading projects from GitHub...</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="reveal footer-section">
-            <div class="footer-card">
-                <h2 class="huge-title">LET'S BUILD</h2>
-                <div class="social-dock">
-                    <!-- EDIT: Change Social Links -->
-                    <a href="https://github.com" target="_blank" title="GitHub" class="magnetic">GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" title="LinkedIn" class="magnetic">LinkedIn</a>
+        <section id="contact" class="section">
+            <h2 class="section-title reveal">Let's <span>Talk</span></h2>
+            <div class="contact-container reveal">
+                <div class="contact-info">
+                    <h3>Connect with me</h3>
+                    <p>Have a project in mind or just want to say hi? Feel free to reach out through any of these platforms.</p>
+                    <div class="btn-group" style="justify-content: flex-start;">
+                        <a href="https://github.com/Santhosh2313" target="_blank" class="btn btn-outline antigravity">GitHub</a>
+                        <a href="#" target="_blank" class="btn btn-outline antigravity">LinkedIn</a>
+                    </div>
                 </div>
-                <!-- EDIT: Change Mailto Email address -->
-                <a href="mailto:hello@example.com" class="btn-solid huge-btn magnetic">Send Message</a>
+                <form class="contact-form antigravity">
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </section>
-    </main>
+    </div>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border);">
+            <p>&copy; 2026 Santhosh. Built with passion and code.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
