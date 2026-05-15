@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg: #0a0a0c;
+  --bg: #030304;
   --text: #ffffff;
-  --text-dim: #888888;
-  --accent-1: #10b981; /* Emerald */
-  --accent-2: #ec4899; /* Pink */
-  --accent-3: #f59e0b; /* Amber */
-  --surface: #121214;
-  --surface-border: #222222;
+  --text-dim: #94a3b8;
+  --accent-1: #00f2ff; /* Cyber Cyan */
+  --accent-2: #7000ff; /* Deep Purple */
+  --accent-3: #ff007a; /* Neon Pink */
+  --surface: rgba(15, 15, 20, 0.6);
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --glow-color: rgba(0, 242, 255, 0.5);
 }
 
 * {
@@ -31,10 +32,18 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(to right, rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
   z-index: -2;
+  pointer-events: none;
+}
+
+.particles-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .glow {
@@ -253,6 +262,18 @@ section {
   border-radius: 3rem;
   padding: 4rem;
   height: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.pill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+  opacity: 0.5;
 }
 
 .large-text {
@@ -313,6 +334,24 @@ section {
   margin-right: 0.5rem;
   margin-bottom: 1rem;
 }
+
+/* Card UI Variations - Clean Uniform Style */
+.variant-1,
+.variant-2,
+.variant-3 {
+  border-radius: 1rem;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+}
+
+.variant-1:hover { border-color: var(--accent-1); box-shadow: 0 8px 30px rgba(16, 185, 129, 0.12); transform: translateY(-8px); }
+.variant-1 .project-tag { color: var(--accent-1); }
+
+.variant-2:hover { border-color: rgba(255,255,255,0.25); box-shadow: 0 8px 30px rgba(255,255,255,0.05); transform: translateY(-8px); }
+
+.variant-3:hover { border-color: var(--accent-3); box-shadow: 0 8px 30px rgba(245, 158, 11, 0.12); transform: translateY(-8px); }
+.variant-3 .project-tag { color: var(--accent-3); }
+
 
 /* Skills */
 .skills-flex {
@@ -464,6 +503,67 @@ body { cursor: default; }
   100% { opacity: 1; transform: translateY(0) rotateZ(0deg); }
 }
 
-/* 5. Magnetic items transition */
+/* 5. Antigravity & HUD Enhancements */
+.antigravity {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-layer {
+  will-change: transform;
+  pointer-events: none;
+}
+
+.hud-border {
+  position: relative;
+}
+
+.hud-border::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border: 1px solid var(--accent-1);
+  clip-path: polygon(0 0, 20px 0, 20px 1px, 1px 1px, 1px 20px, 0 20px, 
+                     100% 0, 100% 20px, calc(100% - 1px) 20px, calc(100% - 1px) 1px, calc(100% - 20px) 1px, calc(100% - 20px) 0,
+                     0 100%, 0 calc(100% - 20px), 1px calc(100% - 20px), 1px calc(100% - 1px), 20px calc(100% - 1px), 20px 100%,
+                     100% 100%, calc(100% - 20px) 100%, calc(100% - 20px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 20px), 100% calc(100% - 20px));
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.project-card {
+  background: rgba(15, 15, 20, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.skill-pill {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  background: var(--accent-1);
+  color: var(--bg);
+  box-shadow: 0 0 15px var(--accent-1);
+  border-color: var(--accent-1);
+}
+
+.scanline {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  z-index: 9997;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
 .magnetic { will-change: transform; display: inline-block; }
 
