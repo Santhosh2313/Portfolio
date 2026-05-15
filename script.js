@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('projects-container');
         if (!container) return;
         try {
-            const response = await fetch('https://api.github.com/users/Santhosh2313/repos?sort=updated&per_page=6');
+            const response = await fetch('https://api.github.com/users/Santhosh2313/repos?sort=updated&per_page=100');
             const repos = await response.json();
             container.innerHTML = '';
             
