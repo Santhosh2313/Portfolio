@@ -1,23 +1,16 @@
-# Personal Developer Portfolio 🚀
+# React + Vite
 
-A premium, modern, and highly-animated developer portfolio built with a "Dark Luxury" aesthetic. It features a custom floating dock, split-layout hero section, and vibrant mesh gradients, designed to be completely editable and deployable in minutes.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features ✨
-- **Vanilla Tech Stack:** Built with pure HTML5, CSS3, and JavaScript. No bulky frameworks, instantaneous load times.
-- **Glassmorphism UI:** Advanced floating dock and pill-shaped cards using backdrop-blur.
-- **Dynamic Animations:** `IntersectionObserver` scroll reveals, CSS keyframe morphs, and interactive hover states.
-- **Mesh Gradients:** Custom, lightweight CSS mesh backgrounds for a premium aesthetic.
-- **Fully Responsive:** Adapts seamlessly to mobile, tablet, and desktop viewports.
+Currently, two official plugins are available:
 
-## Customization 🛠️
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-This portfolio is designed to be easily modified without deep programming knowledge. 
+## React Compiler
 
-1. Open `index.html` in any text editor.
-2. Search for the `<!-- EDIT: ... -->` comments spread throughout the file.
-3. Update your name, title, bio, location, skills, and links right next to the comments.
-4. Replace `assets/project_mockup.png` with your own project screenshots.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Deployment 🌐
+## Expanding the ESLint configuration
 
-Since this is a static site, you can host it for free indefinitely. 
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
